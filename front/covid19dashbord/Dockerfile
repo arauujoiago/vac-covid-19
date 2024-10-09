@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN ng build --prod
+RUN npm run build
 FROM nginx:alpine
 COPY --from=build /usr/src/app/dist/covid19dashbord/ /usr/share/nginx/html
 EXPOSE 80
