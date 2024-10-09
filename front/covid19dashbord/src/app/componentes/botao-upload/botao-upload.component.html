@@ -1,0 +1,15 @@
+<button class="btn btn-primary" [disabled]="loading">
+  <label for="fileUpload" *ngIf="!loading">Upload CSV</label>
+  <span
+    *ngIf="loading"
+    class="spinner-border spinner-border-sm"
+    role="status"
+    aria-hidden="true"
+  ></span>
+</button>
+<input
+  (change)="sendFile($event)"
+  id="fileUpload"
+  style="display: none"
+  type="file"
+/>

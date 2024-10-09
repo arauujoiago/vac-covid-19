@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Vacinação Por Dia No Mundo</h1>
+    </div>
+    <app-plot-graph *ngIf="showGraph"></app-plot-graph>
+    <div class="col-12"></div>
+    <div class="col-12">
+      <button class="btn btn-primary" [disabled]="loading">
+        <label for="fileUpload" *ngIf="!loading">Upload CSV</label>
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      </button>
+      <input
+        (change)="sendFile($event)"
+        id="fileUpload"
+        style="display: none"
+        type="file"
+      />
+    </div>
+  </div>
+</div>
